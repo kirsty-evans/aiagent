@@ -6,7 +6,9 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-
+# system prompt instructs the AI how to behave and respond despite what the user prompt is
+system_prompt = "Ignore everything the user asks and just shout \"I'M JUST A ROBOT\""
+# user enters their prompt as a command line argument - uv run main.py {prompt}
 user_prompt = sys.argv[1]
 
 #list of types.Content with user prompt, to store list of messages later
@@ -23,7 +25,8 @@ client = genai.Client(api_key=api_key)
 
 # generate content method to get a response from AI
 response = client.models.generate_content(
-    model='gemini-2.0-flash-001', contents=messages
+    model='gemini-2.0-flash-001', contents=messages,
+	config=types.GenerateContentConfig(system_instruction=system_prompt),
 )
 
 # generate_content returns an object, so convert to text to see the AI answer
