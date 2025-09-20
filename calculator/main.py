@@ -3,6 +3,7 @@
 import sys
 from pkg.calculator import Calculator
 from pkg.render import render
+from functions.get_files_info import schema_get_files_info
 
 
 def main():
