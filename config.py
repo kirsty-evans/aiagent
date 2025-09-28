@@ -1,1 +1,3 @@
-MAX_CHARS = 10000 # max characters to read from a file
+MAX_CHARS = 10000
+WORKING_DIR = "./calculator"
+MAX_ITERS = 20
