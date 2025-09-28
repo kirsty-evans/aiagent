@@ -22,7 +22,9 @@ When a user asks a question or makes a request, make a function call plan. You c
 - Execute Python files with optional arguments
 - Write or overwrite files
 
-All paths you provide should be relative to the working directory. You do not need to specify the working directory in your function calls as it is automatically injected for security reasons.
+The user may ask you to fix mistakes in code, you may look through the files and edit the code.
+
+All paths you provide should be relative to the working directory. You do not need to specify the working directory in your function calls as it is automatically injected for security reasons. Please look through all files to find the correct code.
 """
 
 # user enters their prompt as a command line argument - uv run main.py {prompt}
